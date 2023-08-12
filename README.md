@@ -1,4 +1,4 @@
-<center aligh="center">
+<center align="center">
 
 <br />
 
