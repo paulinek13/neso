@@ -6,6 +6,7 @@
 <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/paulinek13/neso?style=for-the-badge">
 
 <br />
+<br />
 
 <img src="static/favicon.png" alt="neso_img" width="256">
 <h1><b>neso</b></h1>
