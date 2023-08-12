@@ -1,4 +1,4 @@
-<center align="center">
+<div align="center">
 
 <br />
 
@@ -23,4 +23,4 @@
 <img alt="Static Badge" src="https://img.shields.io/badge/tailwindcss-171717?style=for-the-badge&logo=tailwindcss"/>
 </a>
 
-</center>
+</div>
