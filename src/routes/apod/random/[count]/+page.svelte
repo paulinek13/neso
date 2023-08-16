@@ -2,6 +2,8 @@
     import ApodDay from "../../../../components/ApodDay.svelte";
     import { onMount } from "svelte";
     import axios from "axios";
+    import Loader from "../../../../components/Loader.svelte";
+    import ErrorMessage from "../../../../components/ErrorMessage.svelte";
 
     export let data;
 
@@ -45,20 +47,7 @@
         {/each}
     </div>
 {:else if !data_loaded && loading_data}
-    <div
-        class="self-center animate-spin inline-block w-32 h-32 border-4 border-current border-t-transparent rounded-full text-blue-600 my-20"
-        role="status"
-        aria-label="loading"
-    />
+    <Loader />
 {:else}
-    <div class="self-center px-8 py-4 border-l-4 border-orange-600">
-        <p>
-            something went wrong <br /> if this error persists, please
-            <a
-                class="underline text-orange-600"
-                href="https://github.com/paulinek13/neso/issues"
-                >report an issue</a
-            >
-        </p>
-    </div>
+    <ErrorMessage />
 {/if}

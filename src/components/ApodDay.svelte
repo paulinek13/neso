@@ -1,6 +1,9 @@
 <script>
     import { onMount } from "svelte";
     import axios from "axios";
+    import CalendarIcon from "./CalendarIcon.svelte";
+    import Loader from "./Loader.svelte";
+    import ErrorMessage from "./ErrorMessage.svelte";
 
     export let data_loaded = false;
     export let loading_data = true;
@@ -75,17 +78,7 @@
                 <span
                     class="text-xs flex justify-center gap-2 pb-1 tracking-widest"
                 >
-                    <svg
-                        class="w-4 fill-neutral-300"
-                        viewBox="-2.44 0 52.558 52.558"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <path
-                            id="calendar"
-                            d="M610.422,357.634h0v2.047l3.38-.029-.027-10.478-3.381.025.028,5.227Zm-24.761.025,0-4.981,0-3.505-3.354.026v10.482l3.379-.029Zm-.091,6.584H610.5a4.768,4.768,0,0,1-3.16-4.481,4.708,4.708,0,0,1,.759-2.578v-3.111H587.987v3.142a4.757,4.757,0,0,1-2.417,7.028Zm28.127,0h8.172v-10.2l-5.768.021v3.124a4.693,4.693,0,0,1,.753,2.569A4.766,4.766,0,0,1,613.7,364.243Zm8.2,37.488-.027-35.16H574.211v19.293h13.606a2.3,2.3,0,0,1,1.168.325,1.1,1.1,0,0,1,.126.075l.041.029.064.055a2.277,2.277,0,0,1,.9,1.815V401.73Zm-34.108-1.619V388.163l-11.928.023Zm-8.582-40.35a4.7,4.7,0,0,1,.771-2.6v-3.094h-5.767v10.17h8.158A4.771,4.771,0,0,1,579.207,359.762Z"
-                            transform="translate(-574.211 -349.173)"
-                        />
-                    </svg>
+                    <CalendarIcon />
                     <a href="/apod/day/{apod_data.date}">{apod_data.date}</a
                     ></span
                 >
@@ -104,20 +97,7 @@
         </div>
     </div>
 {:else if !data_loaded && loading_data}
-    <div
-        class="self-center animate-spin inline-block w-32 h-32 border-4 border-current border-t-transparent rounded-full text-blue-600 my-20"
-        role="status"
-        aria-label="loading"
-    />
+    <Loader />
 {:else}
-    <div class="self-center px-8 py-4 border-l-4 border-orange-600">
-        <p>
-            something went wrong <br /> if this error persists, please
-            <a
-                class="underline text-orange-600"
-                href="https://github.com/paulinek13/neso/issues"
-                >report an issue</a
-            >
-        </p>
-    </div>
+    <ErrorMessage />
 {/if}
