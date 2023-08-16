@@ -1,14 +1,19 @@
 <div class="w-full flex flex-col">
     <div class="flex-1 flex flex-col justify-center items-center gap-4">
         <span class="flex-1" />
-        <div class="text-center flex gap-2 text-neutral-200 text-xl">
-            front-end to NASA's
-            <a class="inline-block" target="_blank" href="https://api.nasa.gov"
-                ><img
-                    alt="Static Badge"
-                    src="https://img.shields.io/badge/APOD%20API-171717?style=for-the-badge&logo=nasa"
-                /></a
-            >
+        <div class="text-center flex gap-2 text-neutral-200 text-2xl flex-col">
+            <div>front-end to NASA's</div>
+            <div>
+                <a
+                    class="inline-block"
+                    target="_blank"
+                    href="https://api.nasa.gov"
+                    ><img
+                        alt="Static Badge"
+                        src="https://img.shields.io/badge/APOD%20API-171717?style=for-the-badge&logo=nasa"
+                    /></a
+                >
+            </div>
         </div>
         <div
             class="gap-2 flex flex-col flex-wrap justify-center lg:max-w-lg text-center"
