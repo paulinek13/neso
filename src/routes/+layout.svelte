@@ -20,6 +20,7 @@
         <a
             class="border border-stone-700"
             href="https://github.com/paulinek13/neso"
+            target="_blank"
             ><img
                 alt="Static Badge"
                 src="https://img.shields.io/badge/repo-171717?style=for-the-badge&logo=github"

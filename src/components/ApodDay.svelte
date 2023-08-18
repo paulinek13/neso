@@ -88,9 +88,17 @@
                     {apod_data.title}
                 </h1>
                 {#if apod_data.copyright}
-                    <h2 class="text-center text-sm font-light pt-1">
+                    <h2 class="text-center font-normal italic pt-1">
                         {apod_data.copyright}
                     </h2>
+                {:else}
+                    <a
+                        class="text-center font-normal text-sm italic pt-1 block text-neutral-400"
+                        href="https://apod.nasa.gov/apod/lib/about_apod.html#srapply"
+                        target="_blank"
+                    >
+                        (no copyright info)
+                    </a>
                 {/if}
             </div>
             <p class="text-justify">{apod_data.explanation}</p>
