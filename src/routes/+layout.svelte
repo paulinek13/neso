@@ -12,6 +12,10 @@
         <a href="/apod/today">today</a>
         <a href="/apod/day">day</a>
         <a href="/apod/random">random</a>
+        <span class="text-stone-700">|</span>
+        <a href="https://apod.nasa.gov/apod/archivepixFull.html" target="_blank"
+            >archive ➚</a
+        >
         <span class="flex-1" />
         <a
             class="border border-stone-700"
