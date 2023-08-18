@@ -1,5 +1,7 @@
-<div class="w-full border-t border-stone-800 flex flex-col text-sm gap-4 py-4">
-    <div class="flex gap-4 text-neutral-400 justify-center">
+<div
+    class="w-full border-t border-stone-800 flex flex-col text-sm gap-4 px-4 py-4 bg-stone-900 bg-opacity-50"
+>
+    <div class="flex gap-4 text-neutral-400 justify-center flex-wrap">
         <a href="https://apod.nasa.gov/apod/lib/about_apod.html" target="_blank"
             >About APOD ➚</a
         >
