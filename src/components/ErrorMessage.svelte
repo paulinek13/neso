@@ -1,4 +1,4 @@
-<div class="self-center px-8 py-4 border-l-4 border-orange-600">
+<div class="self-center p-4 border-l-4 border-orange-600 m-4">
     <p>
         something went wrong <br /> if this error persists, please
         <a

@@ -33,7 +33,7 @@
 </script>
 
 {#if data_loaded}
-    <div class="flex flex-col py-16 gap-16 lg:py-32 lg:gap-32">
+    <div class="flex flex-col lg:py-32 lg:gap-32">
         {#each apod_data as apod, index}
             <ApodDay
                 data_loaded={true}

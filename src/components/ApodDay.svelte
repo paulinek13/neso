@@ -34,7 +34,7 @@
 </script>
 
 {#if data_loaded}
-    <div class="lg:grid lg:grid-cols-2 lg:p-8 lg:gap-8">
+    <div class="lg:grid lg:grid-cols-2 lg:p-8 lg:gap-8 py-8">
         {#if apod_data.media_type === "image"}
             <div class="lg:hidden relative">
                 <img class="m-auto" src={apod_data.url} alt={apod_data.title} />

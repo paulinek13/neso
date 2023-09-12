@@ -6,7 +6,7 @@
     <div class="flex-1 flex flex-col justify-center items-center gap-4">
         <span class="flex-1" />
         <div class="text-center flex gap-2 text-neutral-200 text-2xl flex-col">
-            <div>front-end to NASA's</div>
+            <h1>front-end to NASA's</h1>
             <div>
                 <a
                     class="inline-block"
@@ -23,7 +23,7 @@
             class="gap-2 flex flex-col flex-wrap justify-center lg:max-w-lg text-center"
         >
             <a
-                class="px-8 py-2 rounded-sm text-neutral-100 bg-orange-600 font-bold"
+                class="px-8 py-2 rounded-sm text-neutral-100 bg-orange-700 font-bold"
                 href="/apod/today">today's picture</a
             >
             <a

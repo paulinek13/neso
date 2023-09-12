@@ -10,11 +10,13 @@
         >
         <a href="https://api.nasa.gov/" target="_blank">NASA APIs ➚</a>
     </div>
-    <div class="self-center">
-        <span class="font-extrabold">Neso</span> -
+    <div class="self-center text-center">
+        <span class="font-extrabold text-orange-500">Neso</span>
+        -
         <a
             href="https://solarsystem.nasa.gov/moons/neptune-moons/neso/in-depth/"
-            class="text-blue-500 italic font-normal"
+            target="_blank"
+            class="italic text-blue-100"
             >"another of Neptune's extremely distant irregular moons"</a
         >
     </div>
