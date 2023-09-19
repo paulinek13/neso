@@ -59,6 +59,7 @@
 {#if compact}
     <div
         class="flex flex-row even:bg-stone-950 odd:bg-[#100E0D] border border-stone-800 rounded-sm"
+        data-sveltekit-preload-data="off"
     >
         <a
             class="tracking-wide font-bold text-center flex items-center px-2 border-r border-stone-800 text-stone-300 hover:text-stone-50"
@@ -81,7 +82,10 @@
         </div>
     </div>
 {:else}
-    <div class="flex flex-col items-stretch border border-stone-800">
+    <div
+        class="flex flex-col items-stretch border border-stone-800"
+        data-sveltekit-preload-data="off"
+    >
         <a
             class="tracking-widest font-bold text-center text-stone-300 hover:text-stone-50 px-8 py-2 bg-[#100E0D] text-lg border-b border-stone-800"
             href="/apod/calendar/{year}">{year}</a
