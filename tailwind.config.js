@@ -8,5 +8,8 @@ export default {
       }
     },
   },
+  future: {
+    hoverOnlyWhenSupported: true,
+  },
   plugins: []
 };
