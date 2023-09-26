@@ -1,5 +1,5 @@
 <script>
-    import GoLink from "../../../components/GoLink.svelte";
+    import GoLink from "./../../../lib/components/atoms/GoLink.svelte";
 
     let count = 10;
 </script>
@@ -11,7 +11,7 @@
     <div class="w-full flex justify-center px-16 lg:max-w-2xl">
         <input
             type="range"
-            class="slider w-full h-1 rounded-lg appearance-none cursor-pointer bg-neutral-900 accent-orange-600"
+            class="slider w-full h-1 rounded-lg appearance-none cursor-pointer bg-stone-900 accent-orange-600"
             bind:value={count}
             min="1"
             max="100"

@@ -1,5 +1,5 @@
 <script>
-    import { firstAPOD, today } from "../lib/utils";
+    import { firstAPOD, today } from "../../utils";
 
     export let year;
 
@@ -58,8 +58,7 @@
 
 {#if compact}
     <div
-        class="flex flex-row even:bg-stone-950 odd:bg-[#100E0D] border border-stone-800 rounded-sm"
-        data-sveltekit-preload-data="off"
+        class="flex flex-row even:bg-stone-950 odd:bg-[#100E0D] border border-stone-800 rounded-sm font-mono"
     >
         <a
             class="tracking-wide font-bold text-center flex items-center px-2 border-r border-stone-800 text-stone-300 hover:text-stone-50"
@@ -67,7 +66,7 @@
         >
 
         <div
-            class="grid grid-cols-6 xs:grid-cols-4 sm:grid-cols-12 flex-1 auto-cols-max content-center text-center"
+            class="grid max-[360px]:grid-cols-4 grid-cols-6 sm:grid-cols-12 flex-1 auto-cols-max content-center text-center"
         >
             {#each months as month, i}
                 {#if !((year === start_year && month < start_month) || (year === current_year && month > current_month))}
@@ -82,10 +81,7 @@
         </div>
     </div>
 {:else}
-    <div
-        class="flex flex-col items-stretch border border-stone-800"
-        data-sveltekit-preload-data="off"
-    >
+    <div class="flex flex-col items-stretch border border-stone-800">
         <a
             class="tracking-widest font-bold text-center text-stone-300 hover:text-stone-50 px-8 py-2 bg-[#100E0D] text-lg border-b border-stone-800"
             href="/apod/calendar/{year}">{year}</a

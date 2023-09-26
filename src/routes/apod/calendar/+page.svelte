@@ -1,8 +1,7 @@
 <script>
-    import CalendarYear from "../../../components/CalendarYear.svelte";
+    import CalendarYearMonths from "./../../../lib/components/molecules/CalendarYearMonths.svelte";
+    import Checkbox from "./../../../lib/components/atoms/Checkbox.svelte";
     import { firstAPOD, today } from "../../../lib/utils";
-    import { navigating } from "$app/stores";
-    import Loader from "../../../components/Loader.svelte";
 
     function generateYears() {
         let start = parseInt(firstAPOD().year);
@@ -15,30 +14,16 @@
     }
 
     let years = generateYears();
-    let reversed = true;
+    let reversed = false;
 </script>
 
-{#if $navigating}
-    <Loader />
-{:else}
-    <div class="self-center flex flex-col max-w-2xl px-1 py-2">
-        <div class="p-1 flex justify-end">
-            <label
-                class="flex items-center gap-2 accent-orange-500 text-orange-600 font-normal"
-            >
-                <input type="checkbox" bind:checked={reversed} />
-                <span>oldest first</span>
-            </label>
-        </div>
-
-        <div
-            class="flex flex-col {reversed
-                ? 'flex-col'
-                : 'flex-col-reverse'} p-1 gap-1"
-        >
-            {#each years as year}
-                <CalendarYear {year} />
-            {/each}
-        </div>
+<div class="flex flex-col px-1 py-2 max-[360px]:w-full">
+    <div class="p-1 flex justify-end">
+        <Checkbox bind:checked={reversed} text="oldest first" />
     </div>
-{/if}
+    <div class="flex {reversed ? 'flex-col' : 'flex-col-reverse'} p-1 gap-1">
+        {#each years as year}
+            <CalendarYearMonths {year} />
+        {/each}
+    </div>
+</div>

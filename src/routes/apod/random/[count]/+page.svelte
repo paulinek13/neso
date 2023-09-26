@@ -1,53 +1,46 @@
 <script>
-    import ApodDay from "../../../../components/ApodDay.svelte";
-    import { onMount } from "svelte";
-    import axios from "axios";
-    import Loader from "../../../../components/Loader.svelte";
-    import ErrorMessage from "../../../../components/ErrorMessage.svelte";
+    import Apod from "./../../../../lib/components/organisms/Apod.svelte";
+    import Checkbox from "./../../../../lib/components/atoms/Checkbox.svelte";
+    import CompactApod from "./../../../../lib/components/organisms/CompactApod.svelte";
+    import { fade } from "svelte/transition";
 
     export let data;
 
-    let data_loaded = false;
-    let loading_data = true;
-
-    let apod_data = {};
-
-    onMount(async () => {
-        data_loaded = false;
-        loading_data = true;
-        axios
-            .get(`/api/nasa/apod/random?count=${data.count}`)
-            .then((response) => {
-                apod_data = response.data;
-                console.log(apod_data);
-                data_loaded = true;
-            })
-            .catch((error) => {
-                console.log(error);
-                data_loaded = false;
-            })
-            .finally(() => {
-                loading_data = false;
-            });
-    });
+    let compact = false;
+    let hd = false;
 </script>
 
-{#if data_loaded}
-    <div class="flex flex-col lg:py-32 lg:gap-32">
-        {#each apod_data as apod, index}
-            <ApodDay
-                data_loaded={true}
-                loading_data={false}
-                apod_data={apod}
-                media_first={index % 2 == 0 ? true : false}
-            />
-            {#if index < data.count - 1}
-                <div class="hidden lg:block lg:border lg:border-neutral-800" />
-            {/if}
-        {/each}
+<div class="flex flex-col gap-2 h-full items-center justify-start">
+    <div class="flex flex-wrap px-4 gap-x-2 justify-end w-full max-w-lg">
+        <Checkbox bind:checked={compact} text="compact view" />
+        <Checkbox bind:checked={hd} text="high-resolution" />
     </div>
-{:else if !data_loaded && loading_data}
-    <Loader />
-{:else}
-    <ErrorMessage />
-{/if}
+
+    <span class="flex-1" />
+
+    {#if compact}
+        <div
+            class="grid gap-2 grid-cols-1 xs:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 self-center p-2"
+            in:fade
+        >
+            {#each data.data as item, index}
+                <CompactApod data={item} {hd} />
+            {/each}
+        </div>
+    {:else}
+        <div
+            class="flex flex-col gap-12 py-12 w-full p-2 lg:gap-32 lg:py-32"
+            in:fade
+        >
+            {#each data.data as item, index}
+                <Apod
+                    data={item}
+                    {hd}
+                    media_first={index % 2 == 0 ? true : false}
+                />
+            {/each}
+        </div>
+    {/if}
+
+    <span class="flex-1" />
+</div>
