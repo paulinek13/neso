@@ -13,7 +13,7 @@
     <TopNav />
 
     <div
-        class="min-w-[300px] flex-1 break-words flex flex-col items-center justify-center max-[300px]:bg-red-950 max-[320px]:bg-red-900"
+        class="min-w-[300px] flex-1 break-words flex flex-col items-center justify-center"
     >
         {#if $navigating}
             <div in:fade><Loader /></div>
