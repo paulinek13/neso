@@ -2,29 +2,20 @@
     class="min-w-[300px] flex flex-wrap items-center justify-center p-4 gap-2 text-sm bg-stone-900 bg-opacity-50 border-t border-stone-800 text-stone-400"
 >
     <a
-        class="hover:outline hover:outline-2 hover:outline-blue-950"
         href="https://github.com/paulinek13/neso"
         target="_blank"
-        ><img
-            alt="Static Badge"
-            src="https://img.shields.io/badge/repo-000?style=for-the-badge&logo=github"
-        /></a
+        class="px-4 py-[6px] font-[500] tracking-widest text-xs border border-stone-700 text-stone-300 hover:outline hover:outline-1 hover:outline-stone-700 bg-black"
+        >REPO ➚</a
     >
     <a
-        class="hover:outline hover:outline-2 hover:outline-blue-950"
-        target="_blank"
         href="https://github.com/nasa/apod-api"
-        ><img
-            alt="Static Badge"
-            src="https://img.shields.io/badge/APOD%20API-000?style=for-the-badge&logo=nasa"
-        /></a
+        target="_blank"
+        class="px-4 py-[6px] font-[500] tracking-widest text-xs border border-blue-800 text-blue-300 hover:outline hover:outline-1 hover:outline-blue-800"
+        >APOD API ➚</a
     >
     <a
-        class="hover:outline hover:outline-2 hover:outline-blue-900"
         href="/about"
-        ><img
-            alt="Static Badge"
-            src="https://img.shields.io/badge/about-172554?style=for-the-badge"
-        />
-    </a>
+        class="px-4 py-[6px] font-[500] tracking-widest text-xs border border-orange-800 text-orange-300 hover:outline hover:outline-1 hover:outline-orange-800"
+        >ABOUT</a
+    >
 </div>
