@@ -61,7 +61,7 @@
         class="flex flex-row even:bg-stone-950 odd:bg-[#100E0D] border border-stone-800 rounded-sm font-mono"
     >
         <a
-            class="tracking-wide font-bold text-center flex items-center px-2 border-r border-stone-800 text-stone-300 hover:text-stone-50"
+            class="tracking-wide font-[700] text-center flex items-center px-2 border-r border-stone-800 text-stone-300 hover:text-stone-50"
             href="/apod/calendar/{year}">{year}</a
         >
 
@@ -71,7 +71,7 @@
             {#each months as month, i}
                 {#if !((year === start_year && month < start_month) || (year === current_year && month > current_month))}
                     <a
-                        class="text-center hover:text-stone-50 hover:bg-stone-800 font-normal py-[1px] px-2 odd:text-stone-400 even:text-[#908A85]"
+                        class="text-center hover:text-stone-50 hover:bg-stone-800 font-[500] py-[1px] px-2 odd:text-stone-400 even:text-[#908A85]"
                         href="/apod/calendar/{year}/{month}">{months_abbr[i]}</a
                     >
                 {:else}
@@ -83,14 +83,14 @@
 {:else}
     <div class="flex flex-col items-stretch border border-stone-800">
         <a
-            class="tracking-widest font-bold text-center text-stone-300 hover:text-stone-50 px-8 py-2 bg-[#100E0D] text-lg border-b border-stone-800"
+            class="tracking-widest font-[700] text-center text-stone-300 hover:text-stone-50 px-8 py-2 bg-[#100E0D] text-lg border-b border-stone-800"
             href="/apod/calendar/{year}">{year}</a
         >
         <div class="flex flex-col gap-1 w-full py-2 bg-[#100E0D]">
             {#each months as month, i}
                 {#if !((year === start_year && month < start_month) || (year === current_year && month > current_month))}
                     <a
-                        class="hover:text-stone-50 hover:bg-stone-800 font-normal odd:text-stone-400 even:text-[#908A85] px-16 py-2"
+                        class="hover:text-stone-50 hover:bg-stone-800 font-[500] odd:text-stone-400 even:text-[#908A85] px-16 py-2"
                         href="/apod/calendar/{year}/{month}"
                         >{month}. {months_names[i]}</a
                     >

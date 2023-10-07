@@ -6,7 +6,7 @@
     <div class="flex-1 flex flex-col justify-center items-center gap-4">
         <div class="flex flex-col items-center">
             <h1
-                class="text-9xl font-black text-transparent bg-clip-text bg-gradient-to-t from-stone-400 to-stone-100"
+                class="text-9xl font-[900] text-transparent bg-clip-text bg-gradient-to-t from-stone-400 to-stone-100"
             >
                 neso
             </h1>

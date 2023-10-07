@@ -22,7 +22,7 @@
             <!-- <a href="/apod/colors">colors</a> -->
         </div>
         <div class="flex flex-wrap items-center gap-4">
-            <a href="/" class="text-blue-500 font-bold px-2">/</a>
+            <a href="/" class="text-blue-500 font-[700] px-2">/</a>
             <button
                 on:click={() => {
                     expanded = !expanded;

@@ -4,11 +4,11 @@
 
 <div class="flex flex-col items-center gap-4 font-mono p-6">
     <div class="flex flex-col items-center">
-        <h1 class="font-extrabold text-7xl text-orange-600">
+        <h1 class="font-[900] text-7xl text-orange-600">
             {$page.status}
         </h1>
         <h2
-            class="text-sm text-orange-600 font-bold tracking-wide px-4 py-1 rounded-sm"
+            class="text-sm text-orange-600 font-[700] tracking-wide px-4 py-1 rounded-sm"
         >
             {$page.error.status}
         </h2>
