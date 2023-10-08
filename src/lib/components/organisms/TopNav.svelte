@@ -35,7 +35,7 @@
     {#if expanded}
         <div
             transition:slide={{ duration: 256 }}
-            class="p-4 pt-2 flex flex-wrap gap-3 max-w-sm w-full text-sm text-stone-400"
+            class="p-4 pt-2 flex flex-wrap gap-3 max-w-lg w-full text-sm text-stone-400"
         >
             <ExternalLink2
                 url="https://apod.nasa.gov/apod/archivepixFull.html"
