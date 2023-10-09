@@ -1,27 +1,53 @@
 <script>
-    export let data;
-    export let hd = false;
+    import axios from "axios";
+    import ColorPalette from "../molecules/ColorPalette.svelte";
 
+    export let data;
+    export let extended_data = {};
+    export let hd = false;
     export let media_first = true;
+
+    axios
+        .request({
+            timeout: 5000,
+            signal: AbortSignal.timeout(5000),
+            method: "GET",
+            url: `https://apod-exended.pages.dev/${data.date.replace(
+                /-/g,
+                "/"
+            )}.json`,
+        })
+        .then((res) => {
+            extended_data = res.data;
+        })
+        .catch((err) => {
+            console.log(err);
+        });
 </script>
 
 <div
     class="flex flex-col max-w-2xl gap-1 lg:gap-4 lg:grid lg:grid-cols-2 lg:max-w-7xl"
 >
-    <a
-        href={hd ? data.hdurl : data.url}
-        target="_blank"
-        class="overflow-hidden border border-stone-800 bg-black flex {media_first
+    <div
+        class="flex flex-col gap-1 {media_first
             ? 'lg:order-first'
             : 'lg:order-last'}"
-        ><img
-            class="m-auto"
-            src={hd ? data.hdurl : data.url}
-            alt={data.title}
-        /></a
     >
+        <a
+            href={hd ? data.hdurl : data.url}
+            target="_blank"
+            class="overflow-hidden border border-stone-800 bg-black flex"
+            ><img
+                class="m-auto"
+                src={hd ? data.hdurl : data.url}
+                alt={data.title}
+            /></a
+        >
 
-    <div class="flex flex-col self-center">
+        <ColorPalette colors={extended_data.colors} />
+    </div>
+
+    <div class="flex flex-col self-center gap-1">
         <a
             href="/apod/day/{data.date}"
             target="_blank"
@@ -29,7 +55,8 @@
         >
             {data.date}
         </a>
-        <div class="p-1 pt-2">
+
+        <div class="p-1 pt-1">
             <h1 class="font-[700] text-xl lg:text-2xl text-stone-300">
                 {data.title}
             </h1>
