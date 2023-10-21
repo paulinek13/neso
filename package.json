@@ -21,6 +21,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@fontsource-variable/exo-2": "^5.0.14",
 		"axios": "^1.4.0",
 		"dayjs": "^1.11.9"
 	}
