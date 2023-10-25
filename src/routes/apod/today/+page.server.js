@@ -8,7 +8,7 @@ export async function load({ params }) {
         timeout: 20000,
         signal: AbortSignal.timeout(30000),
         method: "GET",
-        url: `https://api.nasa.gov/planetary/apod?date=${today().full}&api_key=${process.env.NASA_API_KEY}`
+        url: `https://api.nasa.gov/planetary/apod?date=${today().full}&api_key=${process.env.NASA_API_KEY}&thumbs=true`
     }).then((res) => {
         // console.log(res.headers.get("x-ratelimit-remaining"));
 

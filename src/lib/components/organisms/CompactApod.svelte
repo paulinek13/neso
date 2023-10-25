@@ -25,13 +25,21 @@
 
 <div class="flex flex-col w-full max-w-xs border border-stone-800 rounded-sm">
     <a
-        href={hd ? data.hdurl : data.url}
+        href={data.media_type == "video"
+            ? data.url
+            : hd
+            ? data.hdurl
+            : data.url}
         target="_blank"
         class="overflow-hidden"
     >
         <div
             class="bg-cover bg-center h-64 hover:scale-125 transition-all duration-300"
-            style="background-image: url({hd ? data.hdurl : data.url})"
+            style="background-image: url({data.media_type == 'video'
+                ? data.thumbnail_url
+                : hd
+                ? data.hdurl
+                : data.url})"
         /></a
     >
 

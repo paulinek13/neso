@@ -34,12 +34,20 @@
             : 'lg:order-last'}"
     >
         <a
-            href={hd ? data.hdurl : data.url}
+            href={data.media_type == "video"
+                ? data.url
+                : hd
+                ? data.hdurl
+                : data.url}
             target="_blank"
             class="overflow-hidden border border-stone-800 bg-black flex"
             ><img
                 class="m-auto"
-                src={hd ? data.hdurl : data.url}
+                src={data.media_type == "video"
+                    ? data.thumbnail_url
+                    : hd
+                    ? data.hdurl
+                    : data.url}
                 alt={data.title}
             /></a
         >
