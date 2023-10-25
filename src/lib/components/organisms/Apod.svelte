@@ -20,9 +20,7 @@
         .then((res) => {
             extended_data = res.data;
         })
-        .catch((err) => {
-            console.log(err);
-        });
+        .catch((err) => {});
 </script>
 
 <div

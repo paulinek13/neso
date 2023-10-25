@@ -18,9 +18,7 @@
         .then((res) => {
             extended_data = res.data;
         })
-        .catch((err) => {
-            console.log(err);
-        });
+        .catch((err) => {});
 </script>
 
 <div class="flex flex-col w-full max-w-xs border border-stone-800 rounded-sm">
