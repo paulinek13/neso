@@ -18,7 +18,7 @@ export async function load({ params }) {
         method: "GET",
         url: `https://api.nasa.gov/planetary/apod?start_date=${startDate}&end_date=${max_today ? dayjs.utc().format("YYYY-MM-DD") : endDate}&api_key=${process.env.NASA_API_KEY}&thumbs=true`
     }).then((res) => {
-        // console.log(res.headers.get("x-ratelimit-remaining"));
+        console.log(res.headers.get("x-ratelimit-remaining"));
 
         return {
             year: params.year,
@@ -27,6 +27,9 @@ export async function load({ params }) {
         };
     }).catch((err) => {
         console.log(err);
-        return { message: "an error occurred" };
+
+        if (err.code === 'ECONNABORTED') throw ServerError(504, "Gateway Timeout", "Oops! It seems like your request took too long to process and timed out.");
+
+        throw ServerError();
     });
 }

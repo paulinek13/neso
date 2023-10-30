@@ -12,16 +12,16 @@ export async function load({ params }) {
         method: "GET",
         url: `https://api.nasa.gov/planetary/apod?count=${count}&api_key=${process.env.NASA_API_KEY}&thumbs=true`
     }).then((res) => {
-        // console.log(res.headers.get("x-ratelimit-remaining"));
+        console.log(res.headers.get("x-ratelimit-remaining"));
 
         return {
             count: count,
             data: res.data
         };
     }).catch((err) => {
-        if (err.code === 'ECONNABORTED') throw ServerError(504, "Gateway Timeout", "Oops! It seems like your request took too long to process and timed out.");
+        console.log(err);
 
-        // console.log(err);
+        if (err.code === 'ECONNABORTED') throw ServerError(504, "Gateway Timeout", "Oops! It seems like your request took too long to process and timed out.");
 
         throw ServerError();
     });
