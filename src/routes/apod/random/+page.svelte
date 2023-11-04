@@ -1,7 +1,21 @@
 <script>
+    import { beforeNavigate } from "$app/navigation";
+    import { browser } from "$app/environment";
+    import { onMount } from "svelte";
     import GoLink from "./../../../lib/components/atoms/GoLink.svelte";
 
     let count = 10;
+
+    beforeNavigate(() => {
+        if (browser && localStorage) {
+            localStorage.setItem("neso-apod-random-count", count);
+        }
+    });
+
+    onMount(() => {
+        if (localStorage)
+            count = localStorage.getItem("neso-apod-random-count", count);
+    });
 </script>
 
 <div
