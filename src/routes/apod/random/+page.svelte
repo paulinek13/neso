@@ -13,8 +13,16 @@
     });
 
     onMount(() => {
-        if (localStorage)
-            count = localStorage.getItem("neso-apod-random-count", count);
+        if (localStorage) {
+            last_count = localStorage.getItem("neso-apod-random-count");
+            if (
+                Number.isInteger(last_count) &&
+                last_count > 0 &&
+                last_count <= 100
+            )
+                count = last_count;
+            else count = 10;
+        }
     });
 </script>
 
