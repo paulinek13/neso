@@ -14,7 +14,10 @@
 
     onMount(() => {
         if (localStorage) {
-            last_count = localStorage.getItem("neso-apod-random-count");
+            let last_count = Number(
+                localStorage.getItem("neso-apod-random-count")
+            );
+
             if (
                 Number.isInteger(last_count) &&
                 last_count > 0 &&
