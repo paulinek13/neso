@@ -1,5 +1,5 @@
 <script>
-    import Apod from "./../../../lib/components/organisms/Apod.svelte";
+    import Apod from "$lib/components/organisms/Apod.svelte";
 
     export let data;
 </script>

@@ -1,10 +1,10 @@
 <script>
-    import { fade } from "svelte/transition";
     import "../app.css";
+    import Footer from "$lib/components/organisms/Footer.svelte";
+    import Loader from "$lib/components/atoms/Loader.svelte";
+    import TopNav from "$lib/components/organisms/TopNav.svelte";
+    import { fade } from "svelte/transition";
     import { navigating } from "$app/stores";
-    import Loader from "../lib/components/atoms/Loader.svelte";
-    import TopNav from "../lib/components/organisms/TopNav.svelte";
-    import Footer from "../lib/components/organisms/Footer.svelte";
 </script>
 
 <div

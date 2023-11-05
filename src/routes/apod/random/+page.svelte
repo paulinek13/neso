@@ -1,8 +1,8 @@
 <script>
+    import GoLink from "$lib/components/atoms/GoLink.svelte";
     import { beforeNavigate } from "$app/navigation";
     import { browser } from "$app/environment";
     import { onMount } from "svelte";
-    import GoLink from "./../../../lib/components/atoms/GoLink.svelte";
 
     let count = 10;
 

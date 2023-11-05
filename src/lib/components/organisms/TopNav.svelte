@@ -1,7 +1,7 @@
 <script>
-    import { slide } from "svelte/transition";
+    import ExternalLink2 from "$lib/components/atoms/ExternalLink2.svelte";
     import { navigating } from "$app/stores";
-    import ExternalLink2 from "../atoms/ExternalLink2.svelte";
+    import { slide } from "svelte/transition";
 
     $: if ($navigating) {
         expanded = false;

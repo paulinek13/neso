@@ -1,7 +1,7 @@
 <script>
-    import CalendarYearMonths from "./../../../lib/components/molecules/CalendarYearMonths.svelte";
-    import Checkbox from "./../../../lib/components/atoms/Checkbox.svelte";
-    import { firstAPOD, today } from "../../../lib/utils";
+    import CalendarYearMonths from "$lib/components/molecules/CalendarYearMonths.svelte";
+    import Checkbox from "$lib/components/atoms/Checkbox.svelte";
+    import { firstAPOD, today } from "$lib/utils";
 
     function generateYears() {
         let start = parseInt(firstAPOD().year);

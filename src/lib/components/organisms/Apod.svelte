@@ -1,6 +1,6 @@
 <script>
+    import ColorPalette from "$lib/components/molecules/ColorPalette.svelte";
     import axios from "axios";
-    import ColorPalette from "../molecules/ColorPalette.svelte";
 
     export let data;
     export let extended_data = {};

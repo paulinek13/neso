@@ -1,6 +1,6 @@
 <script>
-    import GoLink from "./../../../lib/components/atoms/GoLink.svelte";
-    import { today } from "../../../lib/utils.js";
+    import GoLink from "$lib/components/atoms/GoLink.svelte";
+    import { today } from "$lib/utils.js";
 
     let date = today().full;
 </script>

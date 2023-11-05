@@ -1,6 +1,6 @@
-import { ServerError } from '$lib/server/errors.js';
 import axios from 'axios';
-import { today } from '../../../lib/utils';
+import { ServerError } from '$lib/server/errors.js';
+import { today } from '$lib/utils';
 
 /** @type {import('./$types').PageServerLoad} */
 export async function load({ params }) {

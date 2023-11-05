@@ -1,10 +1,10 @@
-import { ServerError } from '$lib/server/errors.js';
 import axios from 'axios';
+import { ServerError } from '$lib/server/errors.js';
 
 /** @type {import('./$types').PageServerLoad} */
 export async function load({ params }) {
     const count = Number(params.count);
-    if (!((Number.isInteger(count)) && (count > 0) && (count <= 100))) throw ServerError(400, "Bad Request", "Invalid `count` param", []);
+    if (!((Number.isInteger(count)) && (count > 0) && (count <= 100))) throw ServerError(400, "Bad Request", "Invalid 'count' param", []);
 
     return await axios.request({
         timeout: 50000,

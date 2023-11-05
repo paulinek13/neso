@@ -1,6 +1,6 @@
 <script>
-    import H2 from "../atoms/H2.svelte";
-    import P from "../atoms/P.svelte";
+    import H2 from "$lib/components/atoms/H2.svelte";
+    import P from "$lib/components/atoms/P.svelte";
 
     export let title = "";
 </script>

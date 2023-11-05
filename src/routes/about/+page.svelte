@@ -1,8 +1,8 @@
 <script>
-    import TitledParagraph from "./../../lib/components/molecules/TitledParagraph.svelte";
-    import H1 from "./../../lib/components/atoms/H1.svelte";
-    import ExternalLink from "./../../lib/components/atoms/ExternalLink.svelte";
-    import Abbr from "./../../lib/components/atoms/Abbr.svelte";
+    import Abbr from "$lib/components/atoms/Abbr.svelte";
+    import ExternalLink from "$lib/components/atoms/ExternalLink.svelte";
+    import H1 from "$lib/components/atoms/H1.svelte";
+    import TitledParagraph from "$lib/components/molecules/TitledParagraph.svelte";
 </script>
 
 <div class="p-4 flex flex-col gap-4 max-w-lg">

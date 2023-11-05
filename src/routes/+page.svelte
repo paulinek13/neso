@@ -1,5 +1,5 @@
 <script>
-    import Button from "./../lib/components/atoms/Button.svelte";
+    import Button from "$lib/components/atoms/Button.svelte";
 </script>
 
 <div class="flex-1 flex flex-col gap-8 justify-center">

@@ -1,5 +1,5 @@
 <script>
-    import { firstAPOD, today } from "../../utils";
+    import { firstAPOD, today } from "$lib/utils";
 
     export let year;
 

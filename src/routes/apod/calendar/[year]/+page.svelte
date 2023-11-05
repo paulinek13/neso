@@ -1,5 +1,5 @@
 <script>
-    import CalendarYearMonths from "./../../../../lib/components/molecules/CalendarYearMonths.svelte";
+    import CalendarYearMonths from "$lib/components/molecules/CalendarYearMonths.svelte";
 
     export let data;
 </script>

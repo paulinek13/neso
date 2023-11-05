@@ -1,7 +1,7 @@
 <script>
-    import Apod from "./../../../../lib/components/organisms/Apod.svelte";
-    import Checkbox from "./../../../../lib/components/atoms/Checkbox.svelte";
-    import CompactApod from "./../../../../lib/components/organisms/CompactApod.svelte";
+    import Apod from "$lib/components/organisms/Apod.svelte";
+    import Checkbox from "$lib/components/atoms/Checkbox.svelte";
+    import CompactApod from "$lib/components/organisms/CompactApod.svelte";
     import { fade } from "svelte/transition";
 
     export let data;
