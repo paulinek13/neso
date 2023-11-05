@@ -1,8 +1,25 @@
 <script>
     import GoLink from "$lib/components/atoms/GoLink.svelte";
+    import { beforeNavigate } from "$app/navigation";
+    import { browser } from "$app/environment";
+    import { onMount } from "svelte";
     import { today } from "$lib/utils.js";
 
     let date = today().full;
+
+    beforeNavigate(() => {
+        if (browser && localStorage) {
+            localStorage.setItem("neso-apod-last-selected-day", date);
+        }
+    });
+
+    onMount(() => {
+        if (localStorage) {
+            date =
+                localStorage.getItem("neso-apod-last-selected-day") ??
+                today().full;
+        }
+    });
 </script>
 
 <div class="flex flex-col items-center py-4 gap-4 justify-center">
