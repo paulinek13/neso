@@ -10,7 +10,7 @@
 
 <img src="static/favicon.svg" alt="neso_img" width="256">
 <h1><b>neso</b></h1>
-<p style="font-size: large;">front-end to NASA's Astronomy Picture of the Day (APOD) API</p>
+<p style="font-size: large;">Front-end to NASA's Astronomy Picture of the Day API</p>
 <a style="font-size: large;" href="https://neso.vercel.app/"><strong>neso.vercel.app</strong></a>
 
 <br />
