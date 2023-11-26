@@ -23,7 +23,7 @@
         />
     </div>
 
-    <div class="flex flex-col self-center gap-1">
+    <div class="flex flex-col self-center gap-1 w-full">
         <a
             href="/apod/day/{data.date}"
             target="_blank"
@@ -42,7 +42,9 @@
                     target="_blank">{data.copyright ?? "NASA"}</a
                 >
             </h2>
-            <p class="font-[300] text-stone-400 text-sm lg:text-base pt-2">
+            <p
+                class="font-[300] text-stone-400 text-sm lg:text-base pt-2 text-justify"
+            >
                 {data.explanation}
             </p>
         </div>
