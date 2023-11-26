@@ -35,7 +35,7 @@
         class="overflow-hidden blockf flex-1 min-h-[128px]"
     >
         <div
-            class="bg-cover bg-center h-full flex flex-col justify-center text-center text-sm p-4"
+            class="h-full flex flex-col gap-0 justify-center text-center text-sm p-4 bg-gradient-to-br from-slate-900 to-slate-950"
         >
             {#if url}
                 <img
@@ -43,7 +43,7 @@
                         url,
                     )}.ico"
                     alt=""
-                    class="min-w-[32px] max-w-[64px] aspect-square m-auto"
+                    class="min-w-[32px] max-w-[64px] aspect-square self-center m-2"
                 />
             {/if}
             <small>Non-image APOD</small> <i>Open in new tab ➚</i>
