@@ -4,6 +4,6 @@
     export let data;
 </script>
 
-<div class="p-4">
+<div class="p-4 flex">
     <Apod data={data.apod} />
 </div>

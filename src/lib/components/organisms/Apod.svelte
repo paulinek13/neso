@@ -1,26 +1,9 @@
 <script>
-    import ColorPalette from "$lib/components/molecules/ColorPalette.svelte";
-    import axios from "axios";
+    import ApodContent from "$lib/components/molecules/ApodContent.svelte";
 
     export let data;
-    export let extended_data = {};
     export let hd = false;
     export let media_first = true;
-
-    axios
-        .request({
-            timeout: 5000,
-            signal: AbortSignal.timeout(5000),
-            method: "GET",
-            url: `https://apod-exended.pages.dev/${data.date.replace(
-                /-/g,
-                "/"
-            )}.json`,
-        })
-        .then((res) => {
-            extended_data = res.data;
-        })
-        .catch((err) => {});
 </script>
 
 <div
@@ -29,28 +12,15 @@
     <div
         class="flex flex-col gap-1 {media_first
             ? 'lg:order-first'
-            : 'lg:order-last'}"
+            : 'lg:order-last'} border border-stone-800"
     >
-        <a
-            href={data.media_type == "video"
-                ? data.url
-                : hd
-                ? data.hdurl
-                : data.url}
-            target="_blank"
-            class="overflow-hidden border border-stone-800 bg-black flex"
-            ><img
-                class="m-auto"
-                src={data.media_type == "video"
-                    ? data.thumbnail_url
-                    : hd
-                    ? data.hdurl
-                    : data.url}
-                alt={data.title}
-            /></a
-        >
-
-        <ColorPalette colors={extended_data.colors} />
+        <ApodContent
+            url={data?.url}
+            hdurl={data?.hdurl}
+            thumbnail_url={data?.thumbnail_url}
+            media_type={data.media_type}
+            {hd}
+        />
     </div>
 
     <div class="flex flex-col self-center gap-1">

@@ -1,50 +1,20 @@
 <script>
-    import ColorPalette from "$lib/components/molecules/ColorPalette.svelte";
-    import axios from "axios";
+    import ApodContent from "$lib/components/molecules/ApodContent.svelte";
 
     export let data;
     export let hd = false;
-    export let extended_data = {};
-
-    axios
-        .request({
-            timeout: 5000,
-            signal: AbortSignal.timeout(5000),
-            method: "GET",
-            url: `https://apod-exended.pages.dev/${data.date.replace(
-                /-/g,
-                "/"
-            )}.json`,
-        })
-        .then((res) => {
-            extended_data = res.data;
-        })
-        .catch((err) => {});
 </script>
 
-<div class="flex flex-col w-full max-w-xs border border-stone-800 rounded-sm">
-    <a
-        href={data.media_type == "video"
-            ? data.url
-            : hd
-            ? data.hdurl
-            : data.url}
-        target="_blank"
-        class="overflow-hidden"
-    >
-        <div
-            class="bg-cover bg-center h-64 hover:scale-125 transition-all duration-300"
-            style="background-image: url({data.media_type == 'video'
-                ? data.thumbnail_url
-                : hd
-                ? data.hdurl
-                : data.url})"
-        /></a
-    >
+<div class="flex flex-col w-full max-w-xs rounded-sm border border-stone-900">
+    <ApodContent
+        url={data?.url}
+        hdurl={data?.hdurl}
+        thumbnail_url={data?.thumbnail_url}
+        media_type={data.media_type}
+        {hd}
+    />
 
-    <ColorPalette colors={extended_data.colors} compact="true" />
-
-    <div class="px-4 py-2">
+    <div class="px-4 py-2 border-t border-stone-900">
         <h1 class="font-[500] text-lg text-stone-300">
             {data.title}
         </h1>
