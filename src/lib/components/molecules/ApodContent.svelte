@@ -10,6 +10,11 @@
         !thumbnail_url && !hdurl && media_type !== "image" ? false : true;
 
     $: imgUrl = media_type === "video" ? thumbnail_url : hd ? hdurl : url;
+
+    const getHostname = (url) => {
+        const newUrl = new URL(url);
+        return newUrl.hostname;
+    };
 </script>
 
 {#if showAsImg}
@@ -30,8 +35,17 @@
         class="overflow-hidden blockf flex-1 min-h-[128px]"
     >
         <div
-            class="bg-cover bg-center h-full hover:scale-125 transition-all duration-300 flex flex-col gap-0 justify-center text-center text-sm p-4"
+            class="bg-cover bg-center h-full flex flex-col justify-center text-center text-sm p-4"
         >
+            {#if url}
+                <img
+                    src="https://icons.duckduckgo.com/ip3/{getHostname(
+                        url,
+                    )}.ico"
+                    alt=""
+                    class="min-w-[32px] max-w-[64px] aspect-square m-auto"
+                />
+            {/if}
             <small>Non-image APOD</small> <i>Open in new tab ➚</i>
         </div>
     </a>
