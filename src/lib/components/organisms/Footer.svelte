@@ -1,6 +1,16 @@
+<script>
+    import { _VERSION } from "$lib/utils.js";
+</script>
+
 <div
     class="min-w-[300px] flex flex-wrap items-center justify-center p-4 gap-2 text-sm bg-stone-900 bg-opacity-50 border-t border-stone-800 text-stone-400"
 >
+    <a
+        href="https://github.com/paulinek13/neso"
+        target="_blank"
+        class="px-4 py-[6px] font-[500] tracking-widest text-xs border border-stone-800 text-stone-300 hover:text-stone-100 border-l-orange-900 border-r-blue-900 border-t-orange-900 border-b-blue-900"
+        >v{_VERSION}</a
+    >
     <a
         href="https://github.com/paulinek13/neso"
         target="_blank"

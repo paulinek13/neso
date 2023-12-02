@@ -29,3 +29,5 @@ export function today() {
 
     return ({ year: `${year}`, month: `${month}`, day: `${day}`, full: `${year}-${month}-${day}` });
 }
+
+export const _VERSION = "1.0";
