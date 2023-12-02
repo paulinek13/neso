@@ -15,9 +15,13 @@
     />
 
     <div class="px-4 py-2 border-t border-stone-900">
-        <h1 class="font-[500] text-lg text-stone-300">
+        <a
+            href="/apod/day/{data.date}"
+            target="_blank"
+            class="font-[500] text-lg text-stone-300 hover:text-blue-300 block"
+        >
             {data.title}
-        </h1>
+        </a>
         <h2 class="font-[300] text-sm text-stone-300">
             <a
                 href="https://apod.nasa.gov/apod/lib/about_apod.html#srapply"
