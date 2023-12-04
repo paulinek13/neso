@@ -1,9 +1,8 @@
 <script>
     import "../app.css";
     import Footer from "$lib/components/organisms/Footer.svelte";
-    import Loader from "$lib/components/atoms/Loader.svelte";
+    import LoadingPage from "../lib/components/pages/LoadingPage.svelte";
     import TopNav from "$lib/components/organisms/TopNav.svelte";
-    import { fade } from "svelte/transition";
     import { navigating } from "$app/stores";
 </script>
 
@@ -12,11 +11,9 @@
 >
     <TopNav />
 
-    <div
-        class="min-w-[300px] flex-1 break-words flex flex-col items-center justify-center"
-    >
+    <div class="min-w-[300px] flex-1 break-words flex flex-col">
         {#if $navigating}
-            <div in:fade><Loader /></div>
+            <LoadingPage></LoadingPage>
         {:else}
             <slot />
         {/if}
