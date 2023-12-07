@@ -9,7 +9,7 @@
     let showAsImg =
         !thumbnail_url && !hdurl && media_type !== "image" ? false : true;
 
-    $: imgUrl = media_type === "video" ? thumbnail_url : hd ? hdurl : url;
+    $: imgUrl = media_type === "video" ? thumbnail_url : url;
 
     const getHostname = (url) => {
         const newUrl = new URL(url);
@@ -21,7 +21,11 @@
     <div
         class="overflow-hidden flex-1 flex flex-col justify-center min-h-[256px]"
     >
-        <a href={imgUrl} target="_blank" class="block flex-1">
+        <a
+            href={hd && hdurl ? hdurl : imgUrl}
+            target="_blank"
+            class="block flex-1"
+        >
             <div
                 class="bg-cover bg-center h-full hover:scale-125 transition-all duration-300"
                 style="background-image: url({imgUrl})"
