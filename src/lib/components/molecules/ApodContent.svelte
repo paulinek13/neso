@@ -32,7 +32,7 @@
     <a
         target="_blank"
         href={url}
-        class="overflow-hidden blockf flex-1 min-h-[128px]"
+        class="overflow-hidden block flex-1 min-h-[128px]"
     >
         <div
             class="h-full flex flex-col gap-0 justify-center text-center text-sm p-4 bg-gradient-to-br from-slate-900 to-slate-950"
