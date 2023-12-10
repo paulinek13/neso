@@ -15,7 +15,7 @@ export async function load({ params }) {
         console.log(res.headers.get("x-ratelimit-remaining"));
 
         return {
-            apod: res.data
+            data: [res.data]
         };
     }).catch((err) => {
         console.log(err);
