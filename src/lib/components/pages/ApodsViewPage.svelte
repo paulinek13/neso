@@ -13,9 +13,7 @@
 
 <DefaultPageTemplate>
     {#if data && data?.data}
-        <div
-            class="flex flex-col gap-4 h-full items-center justify-start self-center"
-        >
+        <div class="flex flex-col gap-4 h-full items-center">
             <div
                 class="flex flex-wrap px-4 gap-x-2 justify-end w-full max-w-lg"
             >
@@ -26,18 +24,19 @@
             <span class="flex-1" />
 
             {#if compact}
-                <div
-                    class="grid gap-2 grid-cols-1 xs:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 self-center"
-                    in:fade={{ duration: 600 }}
-                >
+                <div class="flex flex-wrap justify-center gap-1 w-full" in:fade>
                     {#each data.data as item, index}
-                        <CompactApod data={item} {hd} />
+                        <CompactApod
+                            data={item}
+                            {hd}
+                            only_one={data.data.length == 1 ? true : false}
+                        />
                     {/each}
                 </div>
             {:else}
                 <div
-                    class="flex flex-col gap-8 w-full lg:gap-16"
-                    in:fade={{ duration: 600 }}
+                    class="flex flex-col gap-8 w-full lg:gap-16 items-center"
+                    in:fade
                 >
                     {#each data.data as item, index}
                         <Apod

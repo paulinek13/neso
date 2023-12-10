@@ -18,28 +18,22 @@
 </script>
 
 {#if showAsImg}
-    <div
-        class="overflow-hidden flex-1 flex flex-col justify-center min-h-[256px]"
-    >
+    <div class="overflow-hidden flex-1 flex flex-col justify-center">
         <a
             href={hd && hdurl ? hdurl : imgUrl}
             target="_blank"
             class="block flex-1"
         >
             <div
-                class="bg-cover bg-center h-full hover:scale-125 transition-all duration-300"
+                class="bg-cover bg-center hover:scale-125 transition-all duration-300 h-full min-h-[16rem]"
                 style="background-image: url({imgUrl})"
             /></a
         >
     </div>
 {:else}
-    <a
-        target="_blank"
-        href={url}
-        class="overflow-hidden block flex-1 min-h-[128px]"
-    >
+    <a target="_blank" href={url} class="overflow-hidden block flex-1">
         <div
-            class="h-full flex flex-col gap-0 justify-center text-center text-sm p-4 bg-gradient-to-br from-slate-900 to-slate-950"
+            class="h-full min-h-[16rem] flex flex-col gap-0 justify-center text-center text-sm p-4 bg-gradient-to-br from-slate-900 to-slate-950"
         >
             {#if url}
                 <img

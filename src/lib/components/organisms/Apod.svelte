@@ -7,12 +7,12 @@
 </script>
 
 <div
-    class="flex flex-col max-w-2xl gap-1 lg:gap-2 lg:grid lg:grid-cols-2 lg:max-w-7xl"
+    class="flex flex-col max-w-xl gap-1 md:gap-2 md:grid md:grid-cols-2 md:max-w-7xl"
 >
     <div
         class="flex flex-col gap-1 {media_first
-            ? 'lg:order-first'
-            : 'lg:order-last'} border border-stone-800"
+            ? 'md:order-first'
+            : 'md:order-last'} border border-stone-800"
     >
         <ApodContent
             url={data?.url}
