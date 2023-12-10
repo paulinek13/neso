@@ -10,9 +10,7 @@
     class="flex flex-col rounded-sm border border-stone-900 max-w-lg {only_one
         ? ''
         : 'md:max-w-xs'}"
-    style={only_one
-        ? "width: 100%; border: 1px red solid;"
-        : "flex: 0 1 calc(50% - 2px); margin: 0;"}
+    style={only_one ? "width: 100%;" : "flex: 0 1 calc(50% - 2px); margin: 0;"}
 >
     <ApodContent
         url={data?.url}
