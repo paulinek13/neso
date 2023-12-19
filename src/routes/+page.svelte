@@ -1,6 +1,6 @@
 <script>
     import Button from "$lib/components/atoms/Button.svelte";
-    import { DefaultPageTemplate } from "$lib/components/templates/DefaultPageTemplate.svelte";
+    import DefaultPageTemplate from "$lib/components/templates/DefaultPageTemplate.svelte";
 </script>
 
 <DefaultPageTemplate>
