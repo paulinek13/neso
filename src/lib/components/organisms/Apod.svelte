@@ -7,12 +7,12 @@
 </script>
 
 <div
-    class="flex flex-col max-w-xl gap-1 md:gap-2 md:grid md:grid-cols-2 md:max-w-7xl"
+    class="flex flex-col gap-1 md:gap-4 md:grid md:grid-cols-2 xl:grid-cols-5 max-w-7xl w-full"
 >
     <div
         class="flex flex-col gap-1 {media_first
             ? 'md:order-first'
-            : 'md:order-last'} border border-stone-800"
+            : 'md:order-last'} border border-stone-900 xl:col-span-2"
     >
         <ApodContent
             url={data?.url}
@@ -23,26 +23,25 @@
         />
     </div>
 
-    <div class="flex flex-col gap-1 w-full">
+    <div class="flex flex-col gap-1 xl:col-span-3">
         <a
             href="/apod/day/{data.date}"
             target="_blank"
-            class="text-center p-1 bg-stone-900 border border-stone-800 text-base lg:text-lg"
+            class="text-center p-[2px] border border-stone-900 text-sm tracking-widest bg-[#141210]"
         >
             {data.date}
         </a>
-
-        <div class="p-1 pt-1">
-            <h1 class="font-[700] text-xl lg:text-2xl text-stone-300">
+        <div class="px-1">
+            <h1 class="font-[800] text-stone-300 text-2xl tracking-wide pt-1">
                 {data.title}
             </h1>
-            <h2 class="font-[300] text-sm lg:text-lg text-stone-300 italic">
+            <h2 class="font-[300] text-stone-400 text-sm italic">
                 <a
                     href="https://apod.nasa.gov/apod/lib/about_apod.html#srapply"
                     target="_blank">{data.copyright ?? "NASA"}</a
                 >
             </h2>
-            <p class="font-[300] text-stone-400 text-sm lg:text-base pt-2">
+            <p class="font-[300] text-[#BFBBB8] mt-2 md:mt-4">
                 {data.explanation}
             </p>
         </div>

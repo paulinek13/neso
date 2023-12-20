@@ -16,19 +16,19 @@
             <a
                 href="https://github.com/nasa/apod-api"
                 target="_blank"
-                class="block px-3 py-[5px] font-[500] tracking-widest border border-stone-700 text-blue-300 bg-stone-950 hover:outline hover:outline-1 hover:outline-blue-700"
+                class="block px-3 py-[5px] font-[500] tracking-widest border border-blue-800 text-blue-300 bg-stone-950 hover:outline hover:outline-1 hover:outline-blue-800"
                 >APOD API ➚</a
             >
             <a
                 href="/about"
-                class="block px-3 py-[5px] font-[500] tracking-widest border border-stone-700 text-orange-300 bg-stone-950 hover:outline hover:outline-1 hover:outline-orange-700"
+                class="block px-3 py-[5px] font-[500] tracking-widest border border-orange-800 text-orange-300 bg-stone-950 hover:outline hover:outline-1 hover:outline-orange-800"
                 >ABOUT</a
             >
         </div>
         <a
             href="https://github.com/paulinek13/neso"
             target="_blank"
-            class="block px-3 py-[1px] font-[500] text-center text-[0.7rem] font-mono tracking-widest border border-stone-800 text-stone-300 hover:border-stone-700 hover:text-stone-200"
+            class="block px-3 py-[1px] font-[500] text-center text-[0.7rem] tracking-widest text-stone-300 hover:bg-stone-900 hover:text-stone-200"
             >v{_VERSION}</a
         >
     </div>
