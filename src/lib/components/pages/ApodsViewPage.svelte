@@ -35,7 +35,7 @@
                 </div>
             {:else}
                 <div
-                    class="flex flex-col gap-8 w-full lg:gap-16 items-center"
+                    class="flex flex-col gap-16 w-full items-center p-2"
                     in:fade
                 >
                     {#each data.data as item, index}
