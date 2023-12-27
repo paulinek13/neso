@@ -19,6 +19,7 @@
             hdurl={data?.hdurl}
             thumbnail_url={data?.thumbnail_url}
             media_type={data.media_type}
+            extended_data={data?._extended}
             {hd}
         />
     </div>

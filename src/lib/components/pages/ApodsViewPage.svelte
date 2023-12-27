@@ -9,6 +9,21 @@
 
     let compact = false;
     let hd = false;
+
+    data?.data.forEach(async (apod_info, index) => {
+        await fetch(`/api/supabase/get/extended-data/${apod_info.date}`, {
+            method: "GET",
+            headers: {
+                "content-type": "application/json",
+            },
+        }).then(async (res) => {
+            let _extended_data = await res.json();
+            data.data[index] = {
+                ...data.data[index],
+                _extended: _extended_data,
+            };
+        });
+    });
 </script>
 
 <DefaultPageTemplate>
@@ -34,10 +49,7 @@
                     {/each}
                 </div>
             {:else}
-                <div
-                    class="flex flex-col gap-16 w-full items-center p-2"
-                    in:fade
-                >
+                <div class="flex flex-col gap-16 w-full items-center" in:fade>
                     {#each data.data as item, index}
                         <Apod
                             data={item}
