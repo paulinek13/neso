@@ -21,10 +21,11 @@
     />
 
     <div class="p-1 px-2 border-t border-stone-900">
+        <span class="text-xs tracking-wide block">{data.date}</span>
         <a
             href="/apod/day/{data.date}"
             target="_blank"
-            class="font-[500] text-sm text-stone-300 hover:text-blue-300 block"
+            class="font-[700] text-sm text-stone-300 hover:text-blue-300 block"
         >
             {data.title}
         </a>
