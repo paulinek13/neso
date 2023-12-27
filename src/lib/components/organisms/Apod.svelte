@@ -32,9 +32,13 @@
             {data.date}
         </a>
         <div class="px-1">
-            <h1 class="font-[800] text-stone-300 text-2xl tracking-wide pt-1">
+            <a
+                href="/apod/day/{data.date}"
+                target="_blank"
+                class="font-[800] text-stone-300 hover:text-blue-300 text-2xl tracking-wide pt-1"
+            >
                 {data.title}
-            </h1>
+            </a>
             <h2 class="font-[300] text-stone-400 text-sm italic">
                 <a
                     href="https://apod.nasa.gov/apod/lib/about_apod.html#srapply"
