@@ -23,7 +23,7 @@
 {#if showAsImg}
     <div class="flex-1 flex flex-col justify-center">
         <a
-            href={hd && hdurl ? hdurl : imgUrl}
+            href={hd && hdurl ? hdurl : media_type === "video" ? url : imgUrl}
             target="_blank"
             class="block flex-1 overflow-hidden"
         >
