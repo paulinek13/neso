@@ -7,7 +7,7 @@
 </script>
 
 <div
-    class="flex flex-col gap-1 md:gap-4 md:grid md:grid-cols-2 xl:grid-cols-5 max-w-7xl w-full"
+    class="flex flex-col gap-1 md:gap-4 md:grid md:grid-cols-2 xl:grid-cols-5 max-w-xl md:max-w-6xl xl:max-w-7xl w-full"
 >
     <div
         class="flex flex-col gap-1 {media_first

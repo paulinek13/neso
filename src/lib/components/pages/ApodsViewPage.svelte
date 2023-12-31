@@ -7,7 +7,7 @@
 
     export let data;
 
-    let compact = false;
+    let compact = true;
     let hd = false;
 
     data?.data.forEach(async (apod_info, index) => {
