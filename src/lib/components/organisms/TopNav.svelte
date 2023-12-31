@@ -19,7 +19,7 @@
             <a href="/apod/day">day</a>
             <a href="/apod/random">random</a>
             <a href="/apod/calendar">calendar</a>
-            <!-- <a href="/apod/colors">colors</a> -->
+            <a href="/apod/filter">filter</a>
         </div>
         <div class="flex flex-wrap items-center gap-4">
             <a href="/" class="text-blue-500 font-[700] px-2">/</a>

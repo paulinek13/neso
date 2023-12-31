@@ -9,13 +9,13 @@
     <div in:fade class="flex border-t border-stone-900 flex-wrap">
         {#each hex_palette as color, index}
             <div
-                class="flex-1 text-center min-w-16"
+                class="flex-1 text-center min-w-12 overflow-hidden"
                 style="background-color: #{color};"
             >
                 <a
-                    href="/filter?color={filter_palette[index]}"
+                    href="/apod/filter?colors={filter_palette[index]}"
                     target="_blank"
-                    class="color-link block opacity-0 hover:opacity-100 text-xs py-1 md:text-sm"
+                    class="color-link block opacity-0 hover:opacity-100 text-[10px] sm:text-xs py-1 md:text-sm"
                 >
                     {color}
                 </a>
