@@ -1,7 +1,9 @@
 import axios from 'axios';
-import utc from 'dayjs/plugin/utc';
-import dayjs from 'dayjs';
 import customParseFormat from "dayjs/plugin/customParseFormat";
+import dayjs from 'dayjs';
+import utc from 'dayjs/plugin/utc';
+import { env } from '$env/dynamic/private';
+
 dayjs.extend(customParseFormat);
 dayjs.extend(utc);
 
@@ -16,7 +18,7 @@ export async function load({ params }) {
         timeout: 30000,
         signal: AbortSignal.timeout(30000),
         method: "GET",
-        url: `https://api.nasa.gov/planetary/apod?start_date=${startDate}&end_date=${max_today ? dayjs.utc().format("YYYY-MM-DD") : endDate}&api_key=${process.env.NASA_API_KEY}&thumbs=true`
+        url: `https://api.nasa.gov/planetary/apod?start_date=${startDate}&end_date=${max_today ? dayjs.utc().format("YYYY-MM-DD") : endDate}&api_key=${env.NASA_API_KEY}&thumbs=true`
     }).then((res) => {
         console.log(res.headers.get("x-ratelimit-remaining"));
 

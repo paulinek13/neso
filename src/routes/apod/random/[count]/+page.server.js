@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { ServerError } from '$lib/server/errors.js';
+import { env } from '$env/dynamic/private';
 
 /** @type {import('./$types').PageServerLoad} */
 export async function load({ params }) {
@@ -10,7 +11,7 @@ export async function load({ params }) {
         timeout: 50000,
         signal: AbortSignal.timeout(60000),
         method: "GET",
-        url: `https://api.nasa.gov/planetary/apod?count=${count}&api_key=${process.env.NASA_API_KEY}&thumbs=true`
+        url: `https://api.nasa.gov/planetary/apod?count=${count}&api_key=${env.NASA_API_KEY}&thumbs=true`
     }).then((res) => {
         console.log(res.headers.get("x-ratelimit-remaining"));
 
