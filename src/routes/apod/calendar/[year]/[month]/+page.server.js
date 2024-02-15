@@ -2,6 +2,7 @@ import axios from 'axios';
 import customParseFormat from "dayjs/plugin/customParseFormat";
 import dayjs from 'dayjs';
 import utc from 'dayjs/plugin/utc';
+import { ServerError } from '$lib/server/errors.js';
 import { env } from '$env/dynamic/private';
 
 dayjs.extend(customParseFormat);
