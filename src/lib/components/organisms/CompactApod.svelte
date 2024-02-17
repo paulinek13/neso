@@ -1,5 +1,8 @@
 <script>
     import ApodContent from "$lib/components/molecules/ApodContent.svelte";
+    import ApodCopyright from "$lib/components/molecules/ApodCopyright.svelte";
+    import ApodDate from "$lib/components/molecules/ApodDate.svelte";
+    import ApodTitle from "$lib/components/molecules/ApodTitle.svelte";
 
     export let data;
     export let hd = false;
@@ -21,20 +24,11 @@
         {hd}
     />
 
-    <div class="p-1 px-2 border-t border-stone-900">
-        <span class="text-xs tracking-wide block">{data.date}</span>
-        <a
-            href="/apod/day/{data.date}"
-            target="_blank"
-            class="font-[700] text-sm text-stone-300 hover:text-blue-300 block"
-        >
-            {data.title}
-        </a>
-        <h2 class="font-[300] text-xs text-stone-300">
-            <a
-                href="https://apod.nasa.gov/apod/lib/about_apod.html#srapply"
-                target="_blank">{data.copyright ?? "NASA"}</a
-            >
-        </h2>
+    <div class="p-2 border-t border-stone-900">
+        <ApodDate {data} small />
+        <div class="h-1" />
+        <ApodTitle {data} small />
+        <div class="h-1" />
+        <ApodCopyright {data} small />
     </div>
 </div>

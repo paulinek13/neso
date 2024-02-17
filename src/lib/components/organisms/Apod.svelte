@@ -1,5 +1,9 @@
 <script>
     import ApodContent from "$lib/components/molecules/ApodContent.svelte";
+    import ApodCopyright from "$lib/components/molecules/ApodCopyright.svelte";
+    import ApodDate from "$lib/components/molecules/ApodDate.svelte";
+    import ApodExplanation from "$lib/components/molecules/ApodExplanation.svelte";
+    import ApodTitle from "$lib/components/molecules/ApodTitle.svelte";
 
     export let data;
     export let hd = false;
@@ -25,30 +29,12 @@
     </div>
 
     <div class="flex flex-col gap-1 xl:col-span-3">
-        <a
-            href="/apod/day/{data.date}"
-            target="_blank"
-            class="text-center p-[2px] border border-stone-900 text-sm tracking-widest bg-[#141210]"
-        >
-            {data.date}
-        </a>
-        <div class="px-1">
-            <a
-                href="/apod/day/{data.date}"
-                target="_blank"
-                class="font-[800] text-stone-300 hover:text-blue-300 text-2xl tracking-wide pt-1"
-            >
-                {data.title}
-            </a>
-            <h2 class="font-[300] text-stone-400 text-sm italic">
-                <a
-                    href="https://apod.nasa.gov/apod/lib/about_apod.html#srapply"
-                    target="_blank">{data.copyright ?? "NASA"}</a
-                >
-            </h2>
-            <p class="font-[300] text-[#BFBBB8] mt-2 md:mt-4">
-                {data.explanation}
-            </p>
+        <ApodDate {data} />
+        <div class="px-2 pt-1">
+            <ApodTitle {data} />
+            <ApodCopyright {data} />
+            <div class="h-2 md:h-4" />
+            <ApodExplanation {data} />
         </div>
     </div>
 </div>
