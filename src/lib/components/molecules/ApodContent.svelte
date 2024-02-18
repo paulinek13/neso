@@ -1,57 +1,57 @@
 <script>
-    import ApodColors from "$lib/components/molecules/ApodColors.svelte";
-
-    export let url;
-    export let hdurl;
-    export let thumbnail_url;
-    export let media_type;
-    export let extended_data;
-
+    export let data;
     export let hd = false;
+    export let fullImg = false;
 
     let showAsImg =
-        !thumbnail_url && !hdurl && media_type !== "image" ? false : true;
+        !data?.thumbnail_url && !data?.hdurl && data?.media_type !== "image"
+            ? false
+            : true;
 
-    $: imgUrl = media_type === "video" ? thumbnail_url : url;
-
-    const getHostname = (url) => {
-        const newUrl = new URL(url);
-        return newUrl.hostname;
-    };
+    $: imgUrl = data?.media_type === "video" ? data?.thumbnail_url : data?.url;
+    $: linkUrl =
+        data?.media_type === "video" ? data?.url : hd ? data?.hdurl : data?.url;
 </script>
 
 {#if showAsImg}
-    <div class="flex-1 flex flex-col justify-center">
+    {#if fullImg}
         <a
-            href={hd && hdurl ? hdurl : media_type === "video" ? url : imgUrl}
+            class="border border-stone-900 overflow-hidden bg-black"
+            href={linkUrl}
             target="_blank"
-            class="block flex-1 overflow-hidden"
         >
-            <div
-                class="bg-cover bg-center hover:scale-125 transition-all duration-300 h-full min-h-[16rem]"
-                style="background-image: url({imgUrl})"
-            /></a
-        >
-        <ApodColors
-            hex_palette={extended_data?.hex_palette}
-            filter_palette={extended_data?.filter_palette}
-        ></ApodColors>
-    </div>
-{:else}
-    <a target="_blank" href={url} class="overflow-hidden block flex-1">
+            <img
+                class="hover:scale-125 transition-all duration-300 m-auto"
+                src={imgUrl}
+                alt=""
+            />
+        </a>
+    {:else}
         <div
-            class="h-full min-h-[16rem] flex flex-col gap-0 justify-center text-center text-sm p-4 bg-gradient-to-br from-slate-900 to-slate-950"
+            class="flex-1 flex flex-col justify-center border border-stone-900"
         >
-            {#if url}
-                <img
-                    src="https://icons.duckduckgo.com/ip3/{getHostname(
-                        url,
-                    )}.ico"
-                    alt=""
-                    class="min-w-[32px] max-w-[64px] aspect-square self-center m-2"
-                />
-            {/if}
-            <small>Non-image APOD</small> <i>Open in new tab ➚</i>
+            <a
+                href={linkUrl}
+                target="_blank"
+                class="block flex-1 overflow-hidden"
+            >
+                <div
+                    class="bg-cover bg-center hover:scale-125 transition-all duration-300 h-full min-h-[16rem]"
+                    style="background-image: url({imgUrl})"
+                /></a
+            >
+        </div>
+    {/if}
+{:else}
+    <a
+        target="_blank"
+        href={data?.url ?? "/"}
+        class="border border-stone-900 h-full min-h-[16rem] flex flex-col justify-center text-stone-400 text-sm"
+    >
+        <div
+            class="text-center p-4 bg-black border-t border-b border-stone-900"
+        >
+            ➚ <br /> Non-image APOD <br /> Open in new tab
         </div>
     </a>
 {/if}

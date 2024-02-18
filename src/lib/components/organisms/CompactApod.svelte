@@ -10,21 +10,12 @@
 </script>
 
 <div
-    class="flex flex-col rounded-sm border border-stone-900 max-w-lg {only_one
-        ? ''
-        : 'md:max-w-xs'}"
+    class="flex flex-col rounded-sm max-w-lg {only_one ? '' : 'md:max-w-xs'}"
     style={only_one ? "width: 100%;" : "flex: 0 1 calc(50% - 2px); margin: 0;"}
 >
-    <ApodContent
-        url={data?.url}
-        hdurl={data?.hdurl}
-        thumbnail_url={data?.thumbnail_url}
-        media_type={data.media_type}
-        extended_data={data?._extended}
-        {hd}
-    />
+    <ApodContent {data} {hd} />
 
-    <div class="p-2 border-t border-stone-900">
+    <div class="p-2 border border-t-0 border-stone-900 bg-stone-950">
         <ApodDate {data} small />
         <div class="h-1" />
         <ApodTitle {data} small />
