@@ -4,4 +4,4 @@
     export let data;
 </script>
 
-<ApodsViewPage {data}></ApodsViewPage>
+<ApodsViewPage {data} view="full"></ApodsViewPage>
