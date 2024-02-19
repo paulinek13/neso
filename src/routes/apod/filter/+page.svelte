@@ -22,6 +22,10 @@
 
 <DefaultPageTemplate>
     <div class="flex flex-col gap-2 items-center">
+        <div class="text-sm py-4 px-2 mb-4 max-w-xl">
+            Please be aware it's only a prototype with limited data and
+            capabilities, and is still under development.
+        </div>
         <div class="flex flex-col gap-2 w-full max-w-xl">
             <select
                 class="appearance-none block w-full p-2 text-sm bg-stone-900 border border-stone-800 focus:outline-none focus:ring-0 focus:border-stone-700 rounded-none"

@@ -19,6 +19,12 @@
             <Button link="/apod/day">enter a specific date</Button>
             <Button link="/apod/random">get random images</Button>
             <Button link="/apod/calendar">pick from a calendar</Button>
+            <Button link="/apod/filter" class="new-tag relative box"
+                ><span
+                    class="text-xs text-stone-200 bg-stone-950 border border-blue-950 py-1 px-2 rounded-sm absolute -top-1 -left-2"
+                    >new</span
+                >filter by color</Button
+            >
         </div>
     </div>
 </DefaultPageTemplate>
