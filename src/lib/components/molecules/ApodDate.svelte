@@ -1,6 +1,6 @@
 <script>
     export let data;
-    export let small;
+    export let small = false;
 </script>
 
 <a

@@ -11,9 +11,9 @@
 </script>
 
 <nav
-    class="min-w-[300px] sticky top-0 bg-stone-900 border-b border-stone-800 bg-opacity-80 bg-clip-padding shadow-sm shadow-stone-950 backdrop-blur-sm backdrop-filter z-50 text-stone-300 flex flex-col items-center"
+    class="min-w-[300px] sticky top-0 bg-stone-950 border-b border-stone-900 bg-opacity-90 bg-clip-padding shadow-sm shadow-stone-950 backdrop-blur-sm backdrop-filter z-50 text-stone-300 flex flex-col items-center"
 >
-    <div class="p-4 flex flex-wrap gap-5 max-w-lg w-full font-[300] text-base">
+    <div class="p-4 flex flex-wrap gap-5 max-w-2xl w-full font-[300] text-base">
         <div class="flex flex-wrap gap-3 flex-1">
             <a href="/apod/today">today</a>
             <a href="/apod/day">day</a>
@@ -35,7 +35,7 @@
     {#if expanded}
         <div
             transition:slide={{ duration: 256 }}
-            class="p-4 pt-2 flex flex-wrap gap-3 max-w-lg w-full text-sm text-stone-400"
+            class="p-4 pt-2 flex flex-wrap gap-3 max-w-2xl w-full text-sm text-stone-400"
         >
             <ExternalLink2
                 url="https://apod.nasa.gov/apod/archivepixFull.html"

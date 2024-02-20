@@ -4,5 +4,6 @@
 
 <a
     href={link}
-    class="px-8 py-2 rounded-sm bg-stone-800 hover:bg-stone-900 font-[700]">➥</a
+    class="px-8 py-2 rounded-sm bg-stone-900 hover:bg-opacity-80 font-[700]"
+    >➥</a
 >
