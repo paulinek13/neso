@@ -30,4 +30,4 @@ export function today() {
     return ({ year: `${year}`, month: `${month}`, day: `${day}`, full: `${year}-${month}-${day}` });
 }
 
-export const _VERSION = "2.0-alpha";
+export const _VERSION = "2.0-alpha.1";

@@ -1,6 +1,6 @@
 {
 	"name": "neso",
-	"version": "2.0-alpha",
+	"version": "2.0-alpha.1",
 	"private": true,
 	"scripts": {
 		"dev": "vite dev",
