@@ -2,7 +2,7 @@
 
 <br />
 
-<img alt="Maintenance" src="https://img.shields.io/maintenance/yes/2023?style=for-the-badge">
+<img alt="Maintenance" src="https://img.shields.io/maintenance/yes/2024?style=for-the-badge">
 <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/paulinek13/neso?style=for-the-badge">
 
 <br />
