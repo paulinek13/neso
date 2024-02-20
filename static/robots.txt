@@ -1,2 +1,8 @@
 User-agent: *
 Disallow:
+
+User-agent: SemrushBot
+Disallow: /
+
+User-Agent: Googlebot
+Disallow: /
