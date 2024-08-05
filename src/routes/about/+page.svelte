@@ -22,7 +22,7 @@
         <TitledParagraph title="Why 'Neso'?">
             The project name was inspired by Neptune's moon of the same name.
             Neso is <ExternalLink
-                url="https://solarsystem.nasa.gov/moons/neptune-moons/neso/in-depth/"
+                url="https://science.nasa.gov/neptune/neptune-moons/neso/"
                 text="another of Neptune's extremely distant irregular moons"
             />.
         </TitledParagraph>
