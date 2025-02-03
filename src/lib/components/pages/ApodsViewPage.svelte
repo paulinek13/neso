@@ -3,13 +3,26 @@
     import Checkbox from "$lib/components/atoms/Checkbox.svelte";
     import CompactApod from "$lib/components/organisms/CompactApod.svelte";
     import DefaultPageTemplate from "$lib/components/templates/DefaultPageTemplate.svelte";
+    import { beforeNavigate } from "$app/navigation";
     import { fade } from "svelte/transition";
+    import { browser } from "$app/environment";
+    import { onMount } from "svelte";
 
     export let data;
     export let view = "default";
 
     let compact = false;
     let hd = false;
+
+    beforeNavigate(() => {
+        if (browser && localStorage)
+            localStorage.setItem("neso-apod-view-type", view);
+    });
+
+    onMount(() => {
+        if (localStorage)
+            view = localStorage.getItem("neso-apod-view-type") ?? "default";
+    });
 
     data?.data.forEach(async (apod_info, index) => {
         await fetch(`/api/supabase/get/extended-data/${apod_info.date}`, {
