@@ -15,13 +15,17 @@
     let hd = false;
 
     beforeNavigate(() => {
-        if (browser && localStorage)
+        if (browser && localStorage) {
             localStorage.setItem("neso-apod-view-type", view);
+            localStorage.setItem("neso-apod-hd-link", hd);
+        }
     });
 
     onMount(() => {
-        if (localStorage)
+        if (localStorage) {
             view = localStorage.getItem("neso-apod-view-type") ?? "default";
+            hd = localStorage.getItem("neso-apod-hd-link") ?? false;
+        }
     });
 
     data?.data.forEach(async (apod_info, index) => {
